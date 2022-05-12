@@ -1,17 +1,30 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/content/start",
-    "pages/content/Scene1/Scene1",
-    "pages/content/Scene1/Scene1_1/Scene1_1",
-    "pages/content/Scene1/Scene1_2/Scene1_2",
-    "pages/content/Scene1/Scene1_2/Scene1_2_1/Scene1_2_1",
-    "pages/content/Scene1/Scene1_3/Scene1_3",
-    "pages/content/Scene1/Scene1_4/Scene1_4",
-    "pages/content/Scene2/Scene2",
-    "pages/content/Scene3/Scene3",
-    "pages/content/Scene1/index/index"
+    "pages/logs/logs"
+  ],
+  "subpackages": [
+    {
+      "root": "PackA",
+      "pages": [
+        "pages/content/start",
+        "pages/content/Scene1/Scene1",
+        "pages/content/Scene1/Scene1_1/Scene1_1",
+        "pages/content/Scene1/Scene1_2/Scene1_2",
+        "pages/content/Scene1/Scene1_2/Scene1_2_1/Scene1_2_1",
+        "pages/content/Scene1/Scene1_3/Scene1_3",
+        "pages/content/Scene1/Scene1_4/Scene1_4",
+        "pages/content/Scene2/Scene2",
+        "pages/content/Scene3/Scene3",
+        "pages/content/Scene1/index/index"
+      ]
+    },
+    {
+      "root": "PackB",
+      "pages": [
+        "pages/index/index"
+      ]
+    }
   ],
   "window":{
     "backgroundTextStyle":"light",

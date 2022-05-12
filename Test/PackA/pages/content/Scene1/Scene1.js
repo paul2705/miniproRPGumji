@@ -23,10 +23,10 @@ Page({
     pop: {
       title: '看看先做些啥吧',
       options: [
-        { id: 0, text: '资金筹备', url: '/pages/content/Scene1/Scene1_1/Scene1_1' },
-        { id: 1, text: '场地定档', url: '/pages/content/Scene1/Scene1_2/Scene1_2' },
-        { id: 2, text: '茶歇预定', url: '/pages/content/Scene1/Scene1_3/Scene1_3' },
-        { id: 3, text: '设备租借', url: '/pages/content/Scene1/Scene1_4/Scene1_4' }
+        { id: 0, text: '资金筹备', url: '/PackA/pages/content/Scene1/Scene1_1/Scene1_1' },
+        { id: 1, text: '场地定档', url: '/PackA/pages/content/Scene1/Scene1_2/Scene1_2' },
+        { id: 2, text: '茶歇预定', url: '/PackA/pages/content/Scene1/Scene1_3/Scene1_3' },
+        { id: 3, text: '设备租借', url: '/PackA/pages/content/Scene1/Scene1_4/Scene1_4' }
       ]
     },
     progress: {

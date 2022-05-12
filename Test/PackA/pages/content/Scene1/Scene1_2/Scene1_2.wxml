@@ -35,5 +35,5 @@
 <van-popup show="{{showPopupSubText}}" position="bottom" bind:close="onPopupSubTextClose">
   <van-cell title="{{pop.options[pop.showTextNum].subOpts[pop.showSubTextNum].text}}"/>
 </van-popup>
-<navigator id="backButton" open-type="navigate" url="/pages/content/Scene1/index/index" hidden="{{showBackButton}}">再去做后勤组的任务清单上其他的任务吧！</navigator>
-<navigator id="backButton" open-type="navigate" url="/pages/content/Scene1/Scene1_2/Scene1_2_1/Scene1_2_1" hidden="{{showBackButton}}">一条隐藏剧情线已解锁，点击进入</navigator>
+<navigator id="backButton" open-type="navigate" url="/PackA/pages/content/Scene1/index/index" hidden="{{showBackButton}}">再去做后勤组的任务清单上其他的任务吧！</navigator>
+<navigator id="backButton" open-type="navigate" url="/PackA/pages/content/Scene1/Scene1_2/Scene1_2_1/Scene1_2_1" hidden="{{showBackButton}}">一条隐藏剧情线已解锁，点击进入</navigator>

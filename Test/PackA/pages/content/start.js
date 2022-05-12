@@ -25,9 +25,9 @@ Page({
     pop: {
       title: '按照内心兴趣做出选择吧',
       options: [
-        { id: 0, text: '加入后勤组吧！', url: '/pages/content/Scene1/Scene1' },
-        { id: 1, text: '投奔宣传组吧！', url: '/pages/content/Scene2/Scene2' },
-        { id: 2, text: '那就去节目组吧！', url: '/pages/content/Scene3/Scene3' } 
+        { id: 0, text: '加入后勤组吧！', url: '/PackA/pages/content/Scene1/Scene1' },
+        { id: 1, text: '投奔宣传组吧！', url: '/PackA/pages/content/Scene2/Scene2' },
+        { id: 2, text: '那就去节目组吧！', url: '/PackA/pages/content/Scene3/Scene3' } 
       ]
     },
     progress: {
