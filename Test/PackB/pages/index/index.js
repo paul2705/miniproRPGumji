@@ -40,13 +40,13 @@ function initPerhourChart(canvas, width, height, dpr) {
             { id: 2, name: '加入后勤组·乍至', intro: '', 
               children: [
                 { id: 3, name: '资金筹备', intro: ''},
-                { id: 4, name: '场地定档', intro: ''},
-                { id: 5, name: '茶歇预定', intro: ''},
-                { id: 6, name: '设备租借', intro: '',
+                { id: 4, name: '场地定档', intro: '',
                   children: [
                     {id: 7, name: '隐藏剧情', intro: ''}
                   ]
-                }
+                },
+                { id: 5, name: '茶歇预定', intro: ''},
+                { id: 6, name: '设备租借', intro: ''}
               ]
             },
             { id: 8, name: '加入宣传组·乍至', intro: '', 

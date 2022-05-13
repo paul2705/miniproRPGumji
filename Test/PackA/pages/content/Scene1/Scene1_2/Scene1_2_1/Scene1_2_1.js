@@ -30,12 +30,8 @@ Page({
       },
     ],
     pop: {
-      title: '按照内心兴趣做出选择吧',
-      options: [
-        { id: 0, text: '加入后勤组吧！', url: '/pages/content/Scene1/Scene1' },
-        { id: 1, text: '投奔宣传组吧！', url: '/pages/content/Scene2/Scene2' },
-        { id: 2, text: '那就去节目组吧！', url: '/pages/content/Scene3/Scene3' } 
-      ]
+      title: '哪些因素是要重点考虑的呢?',
+      options: []
     },
     progress: {
       cur: 0,
@@ -45,9 +41,20 @@ Page({
     current: {
       Str: '',
       ID: { Now: 0, Cap: 0 },
-      Par: { Now: 0, Cap: 1 }, 
+      Par: { Now: 0, Cap: 2 }, 
       Cnt: 0
     },
+    targetList: [],
+    habitList: [],
+    kelong: {
+      name: '',
+      icon: ''
+    },
+    startTop: 0, //拖拽开始时克隆项距离class=habitlist节点顶部边界的值
+    top: 0,
+    selectedIndex: -1, //被选择拖拽的项的index
+    backupList: [], //用于备份数据
+    showkelong: false, //是否显示克隆项
   },
 
 nextScene(){
@@ -79,13 +86,21 @@ onPrintWordbyWord(){
       tmpCnt=tmpCnt+1;
       if (tmpCnt>=this.data.article[tmpID].content[tmpPar].length){
         clearInterval(Handler);
-        if (this.data.current.Par.Now<this.data.current.Par.Cap){
+        if (this.data.current.Par.Now<this.data.current.Par.Cap&&this.data.current.Par.Now!=1){
           this.setData({
             'current.Par.Now': this.data.current.Par.Now+1,
             'current.Cnt': 0,
             backgroundImage: this.data.article[0].ImageList[this.data.current.Par.Now+1],
             hideNextButton: false
           });
+        }
+        else if (this.data.current.Par.Now==1){
+          this.setData({
+            'current.Par.Now': this.data.current.Par.Now+1,
+            'current.Cnt': 0,
+            backgroundImage: this.data.article[0].ImageList[this.data.current.Par.Now+1]
+          });
+          this.nextScene();
         }
         else if (tmpID<this.data.current.ID.Cap){
           this.setData({
@@ -115,8 +130,115 @@ showPopup() {
 },
 
 onPopupClose() {
-  this.setData({ showPopupButton: false });
+  this.setData({ 
+    showPopupButton: false,
+    showChoiceButton: false
+  });
+  this.onPrintWordbyWord();
 },
+
+dragStart(e) {
+  // console.log("拖拽开始", e);
+  var i = e.currentTarget.dataset.index // 当前拖拽项的索引index
+  // 把当前拖拽项的内容复制给kelong
+  var kelong = this.data.habitList[i]
+  // console.log("拖拽开始i=",i,"kelong=",kelong);
+  var query = wx.createSelectorQuery(); // 创建节点查询器 quer
+  //选择class=habitlist的节点，获取节点位置信息的查询请求
+  query.select('.habitlist').boundingClientRect((rect) => {
+  var top = e.changedTouches[0].clientY - rect.top - 30
+   var startTop = top;
+    this.setData({
+      kelong: kelong,
+      selectedIndex:i,
+      showkelong: true,
+      top:top,
+      startTop:startTop
+    })
+  }).exec();
+},
+// 拖拽移动
+dragMove(e) {
+  // console.log("拖拽移动", e);
+  var query = wx.createSelectorQuery();
+  var top =this.data.top
+  query.select('.habitlist').boundingClientRect((rect) => {
+   top = e.changedTouches[0].clientY - rect.top - 30
+    if (top < 0) {
+      // 顶部边界控制：控制克隆项不会拖拽出class=habitlist节点的顶部边界
+     top = 0
+    }
+    this.setData({
+      top:top
+    })
+  }).exec();
+},
+// 拖拽结束
+dragEnd(e) {
+  // console.log("拖拽结束", e);
+  var i = e.currentTarget.dataset.index
+  var query = wx.createSelectorQuery();
+  var kelong = this.data.kelong
+  var habitList = this.data.habitList
+  query.select('.habitlist').boundingClientRect((rect) => {
+    var top = e.changedTouches[0].clientY - rect.top - 30
+    if (top > rect.height) {
+      // 底部边界控制：控制克隆项拖拽结束时不会出class=habitlist节点的底部边界
+      top = rect.height - 60
+    } else if (top < 0) {
+      // 顶部边界控制：控制克隆项拖拽结束时不会出class=habitlist节点的顶部边界
+      top = 0
+    }
+    this.setData({
+      top: top,
+    })
+    var target = parseInt(top / 60)
+    var list = []  //用于备份数据
+    if (this.data.startTop > top) {
+      //  往上方位置拖拽
+      for (var k = 0; k <= i - target; k++) {
+        //  备份插入位置target开始的下方数据，除了拖拽数据项
+        if (habitList[target + k].name != kelong.name) {
+          list.push(habitList[target + k])
+        }
+      }
+      // console.log("往上拖拽 list=======", list);
+      if (list.lenghth != 0) {
+        habitList[target] = kelong
+        for (var m = target + 1, n = 0; n < list.length; m++, n++) {
+          habitList[m] = list[n]
+        }
+      }
+    } else {
+      // 往下边位置拖拽
+      for (var k = 1; k <= target - i; k++) {
+        //  备份插入位置target开始的上方数据，除了拖拽数据项
+        if (habitList[i + k].name != kelong.name) {
+          list.push(habitList[i + k])
+        }
+      }
+      // console.log("往下拖拽 list=======", list);
+      if (list.length != 0) {
+        habitList[target] = kelong
+        for (var m = i, n = 0; n < list.length; m++, n++) {
+          habitList[m] = list[n]
+        }
+      }
+    }
+    this.setData({
+      habitList: habitList,
+      selectedIndex:-1,
+      showkelong: false
+    })
+    console.log(habitList,this.data.targetList,habitList==this.data.targetList);
+    let flag=true;
+    for (let i=0;i<this.data.habitList.length;i++){
+      if (this.data.habitList[i].name!=this.data.targetList[i].name) flag=false;
+    }
+    if (flag) this.onPopupClose();
+  }).exec();
+},
+
 
   /**
    * Lifecycle function--Called when page load
@@ -129,6 +251,22 @@ onPopupClose() {
     }
     this.setData({
       'progress.tot': len
+    })
+    var list = [
+      { name: "地理位置（市区中心？靠近公共交通？）", icon: "" },
+      { name: "价格", icon: "" },
+      { name: "附加服务（大巴接送？灯光音响？舞台设置？停车场）", icon: "" }, 
+      { name: "可用面积", icon: "" }
+    ]
+    var tar = [
+      { name: "价格", icon: "" },
+      { name: "地理位置（市区中心？靠近公共交通？）", icon: "" },
+      { name: "可用面积", icon: "" },
+      { name: "附加服务（大巴接送？灯光音响？舞台设置？停车场）", icon: "" }
+    ]
+    this.setData({
+      habitList: list,
+      targetList: tar
     })
   },
 
