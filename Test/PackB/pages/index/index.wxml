@@ -15,7 +15,7 @@
   <navigator url="/PackA/pages/content/start" open-type="navigate" hidden="{{9!=display}}">Demo no.1 舞会台本</navigator>
   <navigator url="/PackA/pages/content/start" open-type="navigate" hidden="{{10!=display}}">Demo no.1 舞会台本</navigator>
   <navigator url="/PackA/pages/content/start" open-type="navigate" hidden="{{11!=display}}">Demo no.1 舞会台本</navigator>
-  <navigator url="/PackA/pages/content/start" open-type="navigate" hidden="{{12!=display}}">Demo no.1 舞会台本</navigator>
+  <navigator url="/PackA/pages/content/Scene3/Scene3" open-type="navigate" hidden="{{12!=display}}">加入节目组·乍至</navigator>
   <navigator url="/PackA/pages/content/start" open-type="navigate" hidden="{{13!=display}}">Demo no.1 舞会台本</navigator>
   <navigator url="/PackA/pages/content/start" open-type="navigate" hidden="{{14!=display}}">Demo no.1 舞会台本</navigator>
   <navigator url="/PackA/pages/content/start" open-type="navigate" hidden="{{15!=display}}">Demo no.1 舞会台本</navigator>

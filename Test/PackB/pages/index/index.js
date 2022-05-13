@@ -42,7 +42,7 @@ function initPerhourChart(canvas, width, height, dpr) {
                 { id: 3, name: '资金筹备', intro: ''},
                 { id: 4, name: '场地定档', intro: '',
                   children: [
-                    {id: 7, name: '隐藏剧情', intro: ''}
+                    { id: 7, name: '隐藏剧情', intro: ''}
                   ]
                 },
                 { id: 5, name: '茶歇预定', intro: ''},
