@@ -1,0 +1,85 @@
+<!--PackC/pages/Scene2/Scene2.wxml-->
+<view class="cover-box_PackC"></view>
+<view id='Title'>
+  <text>{{name}}</text>
+</view>
+<view id='ProgressBox'>
+  <view id='Progress1' style="--percent:{{progress.num}};"></view>
+</view>
+<block wx:if="{{contents[status.id].type==1}}">
+  <image id='BackgroundImg' src="{{contents[status.id].picture}}"></image>
+  <view class="container_content">
+    <text id="content">{{status.text}}</text>
+  </view>
+  <button id="nextButton" size='mini' bindtap="printContent" hidden="{{status.hideNextButton}}"></button>
+</block>
+<block wx:elif="{{contents[status.id].type==2}}">
+  <scroll-view class='FullScrow'>
+    <image id='FullImg' mode='widthFix' src="{{contents[status.id].picture}}"></image>
+  </scroll-view>
+  <button id="nextButton" size='mini' bindtap="printContent" hidden="{{status.hideNextButton}}"></button>
+</block>
+<block wx:elif="{{contents[status.id].type==3}}">
+  <image id='BackgroundImg' src="{{contents[status.id].picture}}"></image>
+  <view class="container_content">
+    <text id="content">{{status.text}}</text>
+  </view>
+</block>
+
+<button id="nextButton" size='mini' bindtap="printContent" hidden="{{contents[0].popup.hide}}"></button>
+<block wx:if="{{!contents[1].popup.hide}}">
+  <van-cell title="{{contents[1].popup.title}}" is-link bind:click="showPopUp" data-popupid="{{1}}" />
+  <van-popup show="{{contents[1].popup.showPopUpButton}}" position="bottom" bind:close="onPopupClose" data-popupid="{{1}}"> 
+    <view wx:for="{{contents[1].popup.contents}}" wx:key="id" class="viewbox">
+      <image class="icon" src="https://636c-cloud1-4gl4jj9w3cb8d273-1311875883.tcb.qcloud.la/Right.svg?sign=834b145010a98652e8c42663a4b0993e&t=1652681341" hidden="{{item.choose}}"></image>
+      <button id="optionButton" bindtap="onShowRight" data-id="{{index}}" data-sec="{{1}}">{{index}}. {{item.text}}</button>
+    </view> 
+  </van-popup>
+</block>
+<block wx:if="{{!contents[4].popup.hide}}">
+  <van-cell title="{{contents[4].popup.title}}" is-link bind:click="showPopUp" data-popupid="{{4}}"/>
+  <van-popup show="{{contents[4].popup.showPopUpButton }}" position="bottom" bind:close="onPopupClose" data-popupid="{{4}}">
+  <view id="container-left">
+    <block wx:for="{{contents[4].popup.contents}}" wx:key="id">
+      <van-cell class="left-cell" title="{{item.text}}"></van-cell>
+    </block>
+  </view>
+  <view id="container-right">
+<view  class="page-wrapper">
+  <top-title toptitle="排序习惯" backImgFlag="true"></top-title>
+  <view class="habitlist">
+    <!-- 克隆当前拖拽的项 -->
+    <view class='habit kelong' hidden='{{!showkelong}}' style='top:{{top}}px'>
+      <view class='index'>?</view>
+      <view class="icon">
+        <image class="iconImg" src="{{kelong.icon}}"></image>
+      </view>
+      <view class="info">
+        <view class="title">{{kelong.name}}</view>
+      </view>
+      <image class="img"
+        src="https://636c-cloud1-4gl4jj9w3cb8d273-1311875883.tcb.qcloud.la/drag.jpeg?sign=cfdeb4ac21bfaeeeece9c9cd3970d08c&t=1652420771"></image>
+    </view>
+    <block wx:for="{{habitList}}" wx:key="name">
+      <view class="habit {{selectedIndex==index?'gray':''}}" >
+        <view class='index'>{{index+1}}</view>
+        <view class="icon">
+          <image class="iconImg" src="{{item.icon}}"></image>
+        </view>
+        <view class="info">
+          <view class="title">{{item.name}}</view>
+        </view>
+        <!-- 拖拽节点 -->
+        <view data-index='{{index}}' catchtouchstart='dragStart' catchtouchmove='dragMove'
+          catchtouchend='dragEnd'>
+          <image class="img"
+            src="https://636c-cloud1-4gl4jj9w3cb8d273-1311875883.tcb.qcloud.la/drag.jpeg?sign=cfdeb4ac21bfaeeeece9c9cd3970d08c&t=1652420771"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+</view>
+  </van-popup>
+</block>
+<navigator id="backButton" bindtap="backScene" open-type="navigate" url="/PackC/pages/travel/travel" hidden="{{contents[6].popup.hide}}">再去做内联组的任务清单上其他的任务吧！</navigator>

@@ -1,0 +1,20 @@
+<!--pages/intro/intro.wxml-->
+<view class="title">食用指南</view>
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto">项目组为大家准备了3条故事线，分别隶属文艺部中后勤组、宣传组以及节目组。真实且精彩的还原2022年初幻境舞会的长达数月的组织与筹备工作。\n\n</text>
+    <text class="user-motto">目录会动态记录你的参与进度，显示你玩过的章节。更多的章节等待你去发掘哦～\n\n</text>
+    <text class="user-motto">*注意：页面跳转次数过多后可能产生跳转失效，请返回首页从「目录」跳转\n\n</text>
+    <view class="user-left">
+      <text class="user-motto">文案：\n</text>
+      <text class="user-motto">小程序制作：\n</text>
+      <text class="user-motto">特别鸣谢：\n</text>
+    </view>
+    <view class="user-left">
+      <text class="user-motto">彭靖嘉，宋万里\n</text>
+      <text class="user-motto">段令博\n</text>
+      <text class="user-motto">何亦农\n</text>
+      
+    </view>
+  </view>
+</view>

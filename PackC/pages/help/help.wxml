@@ -1,0 +1,20 @@
+<!--PackC/pages/help/help.wxml-->
+<view class="title">食用指南</view>
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto">项目组为大家准备了联络宣传、提案反馈、场务和主持四条剧情线，囊括院长见面会组织筹备的各项工作，真实生动地还原了2021年秋季院长见面会的组织筹备工作。\n\n由于服务月时间有限，我们只能先带大家领略两个密院学生会代表性活动的策划过程：文艺盛宴春季舞会以及为学生权益发声的院长见面会。后续我们将会陆续更新更多部门、更多精彩活动背后的故事，敬请期待！\n\n</text>
+    <text class="user-motto">在小程序制作的背后，我们秉持着以下初心——\n\n学生会服务亲民化：通过小程序剧情游戏的趣味形式，拉近学生会和全体密院学子的距离，促进学生会与服务受众的良性互动；\n\n学生会工作透明化：通过鼓励受众体验学生会活动的筹备过程，加深大家对学生会工作内容和工作氛围的认知；后续将推出权益工作体验版块，促进权益路径透明化，强化学生会接受监督，服务学生的职能；\n\n学生会文化品牌化：该小程序经过后续完善和扩充，可成为密院学生会对外介绍的一扇窗口，以扩大学生会品牌活动知名度、影响力。\n\n</text>
+    <text class="user-motto">*注意：页面跳转次数过多后可能产生跳转失效，请返回首页从「目录」跳转\n\n</text>
+    <view class="user-left">
+      <text class="user-motto">文案：\n</text>
+      <text class="user-motto">小程序制作：\n</text>
+      <text class="user-motto">特别鸣谢：\n</text>
+    </view>
+    <view class="user-left">
+      <text class="user-motto">彭靖嘉，宋万里\n</text>
+      <text class="user-motto">段令博\n</text>
+      <text class="user-motto">何亦农\n</text>
+      
+    </view>
+  </view>
+</view>

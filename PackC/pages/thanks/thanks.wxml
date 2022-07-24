@@ -1,0 +1,11 @@
+<!--PackC/pages/thanks/thanks.wxml-->
+<view class="cover-box_PackC"></view>
+<view class="container">
+  <view class="article">
+    <view class="title">尾声</view>
+    <text>
+      随着院长见面会的顺利落幕，我箭头的重担也卸下不少。久久回味着这几周紧张的筹备，我心中可是充满了自豪，感受到了自己在学生权益工作方面，切切实实地为伙伴们做出了有价值的事情！当然，权益是一个细水长流的话题，我们还有内联的日常SRC piazza维护、各种大小提案的日常跟进......期待我们这些努力能为JIer们的共同未来带来有益的改变！\n\n\n
+      特别鸣谢：提供素材的张文静同学，还有各位联络部内联组志愿者、部长们！
+    </text>
+  </view>
+</view>

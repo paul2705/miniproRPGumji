@@ -1,0 +1,12 @@
+/* PackC/pages/Menu/Menu.wxss */
+
+
+.chart{
+  width: 100%;
+  height: 900rpx;
+}
+
+#mychart-dom-bar{
+  width: 100%;
+  height: 900rpx;
+}

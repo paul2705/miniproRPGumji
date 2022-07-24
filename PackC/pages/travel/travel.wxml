@@ -1,0 +1,10 @@
+<!--PackC/pages/travel/travel.wxml-->
+<view class="cover-box_PackC"></view>
+<view class="container">
+  <text>再去做些别的吧~</text>
+</view>
+<navigator id="goButton" url="/PackC/pages/Scene1/Scene1" open-type="navigate">联络宣传</navigator>
+<navigator id="goButton" url="/PackC/pages/Scene2/Scene2" open-type="navigate">提案反馈</navigator>
+<navigator id="goButton" url="/PackC/pages/Scene3/Scene3" open-type="navigate">场务</navigator>
+<navigator id="goButton" url="/PackC/pages/Scene4/Scene4" open-type="navigate">主持</navigator>
+<navigator id="goButton" open-type="navigate" url="{{navigateUrl}}">返回目录</navigator>

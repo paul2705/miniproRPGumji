@@ -1,0 +1,72 @@
+/**index.wxss**/
+.cover-box{
+  position: fixed;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://7374-studentunion-rpg-8frojuvebf55cd9-1311954976.tcb.qcloud.la/background.jpg?sign=4ec306ad9d430d2ac2dd7bdfffb711f1&t=1653052813);
+  z-index: -1;
+}
+
+.userinfo {
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.logo{
+  margin-left: -5%;
+  margin-top: -10%;
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.coverBox{
+  position: fixed;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://7374-studentunion-rpg-8frojuvebf55cd9-1311954976.tcb.qcloud.la/Scene_last.jpg?sign=e4ae56ea937261cad6e6abd2d7a1168d&t=1652957854);
+  z-index: -1;
+}
+
+@keyframes MoveIn {
+  from {margin-top: 100%;}
+  to {margin-top: 0%; }
+}
+
+navigator#GoButton{
+  height: 60rpx;
+  font-size: large;
+  text-align: center;
+  color: black;
+  border: 0.1em solid black;
+  margin: 0% 3% 2% 3%;
+  border-radius: 5% 5% 5% 5%;
+}
+
+.button{
+  animation-name: MoveIn;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+.Introduction{
+  color: black;
+  margin-bottom: 60%;
+}
+
+.buttonContainer{
+  width: 400rpx;
+  display: flex;
+  justify-content: center;
+}

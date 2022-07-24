@@ -1,0 +1,10 @@
+/* pages/content/Scene1/Scene1_1/Scene1_1.wxss */
+
+.cover-box{
+  position: fixed;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://636c-cloud1-4gl4jj9w3cb8d273-1311875883.tcb.qcloud.la/background.jpg?sign=bfc6a154fe604200e1e787684cad92e3&t=1652680058);
+  z-index: -1;
+}

@@ -1,0 +1,30 @@
+<!--PackC/pages/Scene3/Scene3.wxml-->
+<view class="cover-box_PackC"></view>
+<view id='Title'>
+  <text>{{name}}</text>
+</view>
+<view id='ProgressBox'>
+  <view id='Progress1' style="--percent:{{progress.num}};"></view>
+</view>
+<block wx:if="{{contents[status.id].type==1}}">
+  <image id='BackgroundImg' src="{{contents[status.id].picture}}"></image>
+  <view class="container_content">
+    <text id="content">{{status.text}}</text>
+  </view>
+  <button id="nextButton" size='mini' bindtap="printContent" hidden="{{status.hideNextButton}}"></button>
+</block>
+<block wx:elif="{{contents[status.id].type==2}}">
+  <scroll-view class='FullScrow'>
+    <image id='FullImg' mode='widthFix' src="{{contents[status.id].picture}}"></image>
+  </scroll-view>
+  <button id="nextButton" size='mini' bindtap="printContent" hidden="{{status.hideNextButton}}"></button>
+</block>
+<block wx:elif="{{contents[status.id].type==3}}">
+  <image id='BackgroundImg' src="{{contents[status.id].picture}}"></image>
+  <view class="container_content">
+    <text id="content">{{status.text}}</text>
+  </view>
+</block>
+
+<button id="nextButton" size='mini' bindtap="printContent" hidden="{{contents[0].popup.hide}}"></button>
+<navigator id="backButton" bindtap="backScene" open-type="navigate" url="/PackC/pages/travel/travel" hidden="{{contents[3].popup.hide}}">再去做内联组的任务清单上其他的任务吧！</navigator>

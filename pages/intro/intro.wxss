@@ -1,0 +1,22 @@
+/* pages/intro/intro.wxss */
+
+.title{
+  width: 100%;
+  font-size: larger;
+  text-align: center;
+}
+
+.usermotto {
+  margin-top: -120rpx;
+  width: 600rpx;
+}
+
+.user-left{
+  float: left;
+  width: 50%;
+}
+
+.user-right{
+  float: right;
+  width: 50%;
+}

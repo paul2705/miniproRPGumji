@@ -1,0 +1,12 @@
+<!--PackC/pages/Menu/Menu.wxml-->
+<text>只会显示当前玩过的章节哦，去发现更多的剧情吧～（点击情节线中的小节点选择章节）</text>
+<view class="chart">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ EChart }}"></ec-canvas>
+</view>
+<van-cell title='跳转至章节：'>
+  <navigator url="/PackC/pages/index/index" open-type="navigate" hidden="{{0!=display}}">引子</navigator>
+  <navigator url="/PackC/pages/Scene1/Scene1" open-type="navigate" hidden="{{1!=display}}">联络宣传</navigator> 
+  <navigator url="/PackC/pages/Scene2/Scene2" open-type="navigate" hidden="{{2!=display}}">提案反馈</navigator>
+  <navigator url="/PackC/pages/Scene3/Scene3" open-type="navigate" hidden="{{3!=display}}">场务</navigator>
+  <navigator url="/PackC/pages/Scene4/Scene4" open-type="navigate" hidden="{{4!=display}}">主持</navigator>
+</van-cell>

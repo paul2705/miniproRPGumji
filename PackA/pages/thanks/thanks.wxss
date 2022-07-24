@@ -1,0 +1,27 @@
+/* PackA/pages/thanks/thanks.wxss */
+
+@keyframes MoveIn {
+  from {margin-top: 100%;}
+  to {margin-top: -220%; }
+}
+
+.title{
+  width: 100%;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.article{
+  animation-name: MoveIn;
+  animation-duration: 30s;
+  animation-iteration-count: 1;
+  width: 80%;
+  text-align: center;
+  font-size: small;
+  margin-top: -220%;
+}
+
+.video{
+  width: 130%;
+  margin-left: -15%;
+}
